@@ -1352,6 +1352,81 @@
       }
     }
 
+  
+    /* CLICK TO ENLARGE — final working version */
+    .project-gallery .media-tile,
+    .project-gallery .media-tile img,
+    .project-gallery .media-tile video {
+      cursor: zoom-in !important;
+    }
+
+    .portfolio-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(38, 27, 23, 0.82);
+      backdrop-filter: blur(12px);
+      padding: 24px;
+    }
+
+    .portfolio-lightbox.is-open {
+      display: flex;
+    }
+
+    .portfolio-lightbox__content {
+      position: relative;
+      width: min(1180px, 94vw);
+      max-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portfolio-lightbox__content img,
+    .portfolio-lightbox__content video {
+      max-width: 100%;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 26px;
+      background: rgba(248,246,239,0.92);
+      box-shadow: 0 32px 90px rgba(0,0,0,0.35);
+    }
+
+    .portfolio-lightbox__close {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 50%;
+      background: var(--glacier);
+      color: var(--irish-coffee);
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+      z-index: 100000;
+    }
+
+    .portfolio-lightbox__hint {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      color: rgba(248,246,239,0.86);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+
   </style>
 </head>
 
@@ -1846,6 +1921,15 @@
     </div>
   </div>
 
+  <div class="portfolio-lightbox" id="portfolioLightbox" aria-hidden="true">
+    <button class="portfolio-lightbox__close" id="portfolioLightboxClose" type="button" aria-label="Close preview">×</button>
+    <div class="portfolio-lightbox__content" id="portfolioLightboxContent"></div>
+    <div class="portfolio-lightbox__hint">
+      <span data-lang="en">Click outside or press ESC to close</span>
+      <span data-lang="es">Haz clic afuera o presiona ESC para cerrar</span>
+    </div>
+  </div>
+
   <script>
     const langToggle = document.getElementById("langToggle");
     langToggle.addEventListener("click", () => {
@@ -1878,13 +1962,92 @@
         }
       });
     }
-  </script>
-  <div class="media-lightbox" id="mediaLightbox" aria-hidden="true">
-    <div class="media-lightbox-inner">
-      <button class="media-lightbox-close" id="mediaLightboxClose" type="button" aria-label="Close preview">×</button>
-      <div id="mediaLightboxContent"></div>
-    </div>
-  </div>
 
+    function initPortfolioLightbox() {
+      const lightbox = document.getElementById("portfolioLightbox");
+      const lightboxContent = document.getElementById("portfolioLightboxContent");
+      const closeButton = document.getElementById("portfolioLightboxClose");
+
+      if (!lightbox || !lightboxContent || !closeButton) return;
+
+      function openLightboxFromMedia(media) {
+        lightboxContent.innerHTML = "";
+
+        const tag = media.tagName.toLowerCase();
+
+        if (tag === "img") {
+          const image = document.createElement("img");
+          image.src = media.currentSrc || media.src;
+          image.alt = media.alt || "Portfolio image preview";
+          lightboxContent.appendChild(image);
+        }
+
+        if (tag === "video") {
+          const video = document.createElement("video");
+          video.controls = true;
+          video.autoplay = true;
+          video.loop = true;
+          video.muted = false;
+          video.playsInline = true;
+
+          const originalSource = media.querySelector("source");
+          const source = document.createElement("source");
+          source.src = originalSource ? originalSource.src : media.currentSrc || media.src;
+          source.type = originalSource ? originalSource.type || "video/mp4" : "video/mp4";
+
+          video.appendChild(source);
+          lightboxContent.appendChild(video);
+
+          setTimeout(() => {
+            video.play().catch(() => {});
+          }, 100);
+        }
+
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      document.querySelectorAll(".project-gallery img, .project-gallery video").forEach((media) => {
+        media.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          openLightboxFromMedia(media);
+        });
+
+        media.addEventListener("dblclick", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          openLightboxFromMedia(media);
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxContent.innerHTML = "";
+        document.body.style.overflow = "";
+      }
+
+      closeButton.addEventListener("click", closeLightbox);
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+          closeLightbox();
+        }
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initPortfolioLightbox);
+    } else {
+      initPortfolioLightbox();
+    }
+
+  </script>
 </body>
 </html>
