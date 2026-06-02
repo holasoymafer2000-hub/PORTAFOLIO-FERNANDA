@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fernanda Ordaya Oblitas | AI-Powered Graphic Designer</title>
+  <meta name="description" content="Portfolio of Fernanda Ordaya Oblitas, AI-Powered Graphic Designer & Content Creative." />
+
+  <style>
+    :root {
+      --vista-blue: #78A2D2;
+      --mindaro: #FEFFAF;
+      --cream: #FAFFC7;
+      --cherry: #F8A8B9;
+      --paper: #F8F6EF;
+      --black: #1E1E1E;
+      --blue-grey: #D7E3EC;
+      --white: #FFFFFF;
+      --soft-shadow: 0 18px 50px rgba(30, 30, 30, 0.12);
+      --small-shadow: 0 8px 22px rgba(30, 30, 30, 0.10);
+      --radius-lg: 34px;
+      --radius-md: 22px;
+      --radius-sm: 14px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(248,168,185,0.28), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(254,255,175,0.38), transparent 26%),
+        linear-gradient(180deg, #F8F6EF 0%, #F4F1E8 100%);
+      color: var(--black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(30,30,30,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30,30,30,0.025) 1px, transparent 1px);
+      background-size: 38px 38px;
+      mix-blend-mode: multiply;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 34px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: fixed;
+      z-index: 1000;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(var(--max-width), calc(100% - 28px));
+      background: rgba(248, 246, 239, 0.82);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(30, 30, 30, 0.12);
+      border-radius: 999px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--small-shadow);
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--vista-blue), var(--cherry));
+      display: grid;
+      place-items: center;
+      color: var(--paper);
+      font-family: Georgia, serif;
+      font-size: 18px;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.42);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a,
+    .lang-toggle {
+      border: 1px solid rgba(30, 30, 30, 0.12);
+      background: rgba(255,255,255,0.52);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover,
+    .lang-toggle:hover {
+      background: var(--mindaro);
+      transform: translateY(-1px);
+    }
+
+    .mobile-hide {
+      display: flex;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 125px 0 70px;
+      display: grid;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 72vh;
+      border-radius: 46px;
+      overflow: hidden;
+      box-shadow: var(--soft-shadow);
+      background: var(--vista-blue);
+      border: 1px solid rgba(30, 30, 30, 0.12);
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.68;
+      background: linear-gradient(135deg, var(--vista-blue), var(--cherry));
+    }
+
+    .hero-placeholder {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(120,162,210,0.92), rgba(248,168,185,0.60)),
+        radial-gradient(circle at 20% 20%, rgba(254,255,175,0.80), transparent 24%),
+        radial-gradient(circle at 80% 70%, rgba(250,255,199,0.65), transparent 28%);
+    }
+
+    .hero-placeholder::before,
+    .hero-placeholder::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 420px;
+      border-radius: 36px;
+      background: rgba(248,246,239,0.52);
+      border: 1px solid rgba(255,255,255,0.48);
+      transform: rotate(-9deg);
+      left: 8%;
+      top: 18%;
+      box-shadow: var(--small-shadow);
+    }
+
+    .hero-placeholder::after {
+      width: 260px;
+      height: 360px;
+      transform: rotate(8deg);
+      left: auto;
+      right: 9%;
+      top: 25%;
+      background: rgba(254,255,175,0.42);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(30,30,30,0.42), rgba(30,30,30,0.05) 58%, rgba(30,30,30,0.25));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      color: var(--paper);
+      padding: clamp(34px, 7vw, 76px);
+      min-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      background: rgba(248,246,239,0.20);
+      border: 1px solid rgba(248,246,239,0.36);
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 8vw, 110px);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .hero h2 {
+      font-size: clamp(19px, 2.4vw, 32px);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: clamp(16px, 1.7vw, 20px);
+      max-width: 620px;
+      color: rgba(248,246,239,0.92);
+      margin-bottom: 28px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid rgba(30,30,30,0.12);
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: var(--mindaro);
+      color: var(--black);
+    }
+
+    .btn.secondary {
+      background: rgba(248,246,239,0.20);
+      color: var(--paper);
+      border-color: rgba(248,246,239,0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn.dark {
+      background: var(--black);
+      color: var(--paper);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--small-shadow);
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(30,30,30,0.62);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 5vw, 74px);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      font-weight: 500;
+    }
+
+    .section-note {
+      max-width: 430px;
+      font-size: 15px;
+      color: rgba(30,30,30,0.72);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.75fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .paper-card {
+      background: rgba(248,246,239,0.88);
+      border: 1px solid rgba(30,30,30,0.12);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 4vw, 44px);
+      box-shadow: var(--small-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper-card.blue {
+      background: linear-gradient(160deg, rgba(120,162,210,0.92), rgba(215,227,236,0.72));
+    }
+
+    .paper-card.yellow {
+      background: linear-gradient(160deg, rgba(254,255,175,0.92), rgba(248,246,239,0.76));
+    }
+
+    .paper-card.pink {
+      background: linear-gradient(160deg, rgba(248,168,185,0.82), rgba(248,246,239,0.78));
+    }
+
+    .about-copy p {
+      font-size: 18px;
+      color: rgba(30,30,30,0.80);
+      margin-bottom: 18px;
+      max-width: 820px;
+    }
+
+    .avatar-card {
+      display: grid;
+      place-items: center;
+      min-height: 340px;
+      text-align: center;
+    }
+
+    .avatar-circle {
+      width: 205px;
+      height: 205px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 28%, var(--mindaro), transparent 28%),
+        linear-gradient(135deg, var(--cherry), var(--vista-blue));
+      display: grid;
+      place-items: center;
+      font-family: Georgia, serif;
+      font-size: 62px;
+      color: var(--paper);
+      box-shadow: inset 0 0 0 10px rgba(248,246,239,0.38), var(--small-shadow);
+      margin-bottom: 18px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(30,30,30,0.12);
+      padding: 8px 11px;
+      background: rgba(255,255,255,0.45);
+      font-size: 12px;
+      font-weight: 800;
+      color: rgba(30,30,30,0.76);
+    }
+
+    .tag::before {
+      content: "✦";
+      color: var(--vista-blue);
+    }
+
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.42);
+      border: 1px solid rgba(30,30,30,0.12);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      min-height: 205px;
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--small-shadow);
+      background: rgba(254,255,175,0.46);
+    }
+
+    .service-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--vista-blue);
+      color: var(--paper);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 17px;
+      letter-spacing: -0.02em;
+      margin-bottom: 9px;
+    }
+
+    .service-card p {
+      color: rgba(30,30,30,0.70);
+      font-size: 14px;
+    }
+
+    .work-stack {
+      display: grid;
+      gap: 26px;
+    }
+
+    .project {
+      border: 1px solid rgba(30,30,30,0.12);
+      border-radius: 36px;
+      overflow: hidden;
+      background: rgba(248,246,239,0.88);
+      box-shadow: var(--small-shadow);
+    }
+
+    .project-main {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 0;
+    }
+
+    .project-copy {
+      padding: clamp(24px, 4vw, 42px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 500px;
+    }
+
+    .project-copy h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 4vw, 58px);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .project-copy p {
+      color: rgba(30,30,30,0.76);
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .asset-list {
+      margin-top: 20px;
+      display: grid;
+      gap: 9px;
+    }
+
+    .asset-item {
+      border: 1px solid rgba(30,30,30,0.12);
+      background: rgba(255,255,255,0.45);
+      border-radius: 16px;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .project-gallery {
+      padding: 24px;
+      background:
+        linear-gradient(135deg, rgba(120,162,210,0.18), rgba(248,168,185,0.15)),
+        rgba(255,255,255,0.32);
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 150px;
+      gap: 13px;
+      min-height: 500px;
+    }
+
+    .media-tile {
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(248,246,239,0.68);
+      border: 1px solid rgba(30,30,30,0.12);
+      box-shadow: 0 12px 24px rgba(30,30,30,0.08);
+      position: relative;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 16px;
+      color: rgba(30,30,30,0.62);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .media-tile.tall { grid-row: span 2; }
+    .media-tile.wide { grid-column: span 3; }
+    .media-tile.big { grid-column: span 3; grid-row: span 2; }
+    .media-tile.small { grid-column: span 2; }
+    .media-tile.phone {
+      border-radius: 30px;
+      background:
+        linear-gradient(160deg, rgba(30,30,30,0.12), transparent),
+        rgba(248,246,239,0.70);
+    }
+
+    .media-tile img,
+    .media-tile video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      position: absolute;
+      inset: 0;
+    }
+
+    .media-label {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      z-index: 5;
+      background: rgba(248,246,239,0.88);
+      border: 1px solid rgba(30,30,30,0.10);
+      backdrop-filter: blur(10px);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 11px;
+      font-weight: 900;
+      color: rgba(30,30,30,0.78);
+    }
+
+    .highlight-bar {
+      margin-top: 18px;
+      border-left: 4px solid var(--cherry);
+      padding: 14px 16px;
+      background: rgba(248,168,185,0.16);
+      border-radius: 0 18px 18px 0;
+    }
+
+    .before-after {
+      grid-column: span 6;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .before-after .media-tile {
+      min-height: 230px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .process-step {
+      background: rgba(255,255,255,0.45);
+      border: 1px solid rgba(30,30,30,0.12);
+      border-radius: 24px;
+      padding: 18px;
+      min-height: 180px;
+      position: relative;
+    }
+
+    .process-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--cherry);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .process-step h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .process-step p {
+      font-size: 13px;
+      color: rgba(30,30,30,0.70);
+    }
+
+    .json-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(30,30,30,0.86);
+      background: rgba(30,30,30,0.04);
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(30,30,30,0.10);
+      overflow: auto;
+    }
+
+    .callout-list {
+      display: grid;
+      gap: 11px;
+    }
+
+    .callout {
+      border: 1px solid rgba(30,30,30,0.12);
+      background: rgba(255,255,255,0.48);
+      border-radius: 18px;
+      padding: 13px 14px;
+      position: relative;
+    }
+
+    .callout::before {
+      content: "→";
+      position: absolute;
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--vista-blue);
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .callout strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .callout span {
+      color: rgba(30,30,30,0.68);
+      font-size: 13px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .tool-card {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(30,30,30,0.12);
+      background: rgba(255,255,255,0.44);
+      min-height: 210px;
+    }
+
+    .tool-card h3 {
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tool-chip {
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: rgba(120,162,210,0.18);
+      border: 1px solid rgba(120,162,210,0.28);
+      font-size: 12px;
+      font-weight: 850;
+      display: inline-flex;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .tool-chip::before {
+      content: "◆";
+      font-size: 9px;
+      color: var(--cherry);
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr 0.5fr;
+      gap: 22px;
+      align-items: center;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(254,255,175,0.55), transparent 28%),
+        linear-gradient(135deg, rgba(120,162,210,0.88), rgba(248,168,185,0.64));
+      color: var(--black);
+      border-radius: 42px;
+      padding: clamp(28px, 5vw, 56px);
+      box-shadow: var(--soft-shadow);
+      border: 1px solid rgba(30,30,30,0.12);
+      overflow: hidden;
+    }
+
+    .contact-card h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6vw, 86px);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .contact-card p {
+      max-width: 600px;
+      font-size: 18px;
+      margin-bottom: 24px;
+      color: rgba(30,30,30,0.76);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .photo-placeholder {
+      width: min(300px, 100%);
+      aspect-ratio: 3/4;
+      border-radius: 32px;
+      background: rgba(248,246,239,0.70);
+      border: 1px solid rgba(30,30,30,0.12);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: rgba(30,30,30,0.65);
+      font-weight: 850;
+      overflow: hidden;
+      justify-self: center;
+      box-shadow: var(--small-shadow);
+    }
+
+    .footer {
+      padding: 24px 0 40px;
+      text-align: center;
+      color: rgba(30,30,30,0.58);
+      font-size: 13px;
+    }
+
+    [data-lang="es"] {
+      display: none;
+    }
+
+    body.spanish [data-lang="en"] {
+      display: none;
+    }
+
+    body.spanish [data-lang="es"] {
+      display: inline;
+    }
+
+    body.spanish div[data-lang="es"],
+    body.spanish p[data-lang="es"],
+    body.spanish section[data-lang="es"] {
+      display: block;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      background: rgba(30,30,30,0.68);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      width: min(760px, 100%);
+      background: var(--paper);
+      border-radius: 30px;
+      padding: 18px;
+      position: relative;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 50%;
+      background: var(--black);
+      color: var(--paper);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .modal-placeholder {
+      min-height: 430px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--vista-blue), var(--cherry));
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--paper);
+      font-weight: 900;
+      padding: 24px;
+    }
+
+    @media (max-width: 980px) {
+      .mobile-hide {
+        display: none;
+      }
+
+      .about-grid,
+      .project-main,
+      .json-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .what-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid,
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 170px;
+      }
+
+      .media-tile.big,
+      .media-tile.wide,
+      .media-tile.small,
+      .before-after {
+        grid-column: span 2;
+      }
+
+      .before-after {
+        grid-template-columns: 1fr;
+      }
+
+      .project-copy {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        border-radius: 22px;
+        align-items: flex-start;
+      }
+
+      .brand-mark span {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .hero-card,
+      .hero-content {
+        min-height: 76vh;
+        border-radius: 34px;
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .section-note {
+        margin-top: 10px;
+      }
+
+      .what-grid,
+      .process-grid,
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .media-tile.big,
+      .media-tile.wide,
+      .media-tile.small,
+      .before-after {
+        grid-column: span 1;
+      }
+
+      .button-row,
+      .contact-links {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <a class="brand-mark" href="#home" aria-label="Go to home">
+      <span class="brand-dot">F</span>
+      <span>Fernanda Ordaya</span>
+    </a>
+
+    <div class="nav-links">
+      <div class="mobile-hide">
+        <a href="#work">Work</a>
+        <a href="#ai">AI Direction</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="lang-toggle" id="langToggle" type="button">ES / EN</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-card">
+          <!-- Replace this placeholder with your real video file:
+               <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">
+                 <source src="assets/videos/video-home-loop.mp4" type="video/mp4">
+               </video>
+          -->
+          <div class="hero-placeholder"></div>
+          <div class="hero-overlay"></div>
+
+          <div class="hero-content">
+            <span class="eyebrow">AI-driven visual designer</span>
+            <h1>Fernanda<br>Ordaya Oblitas</h1>
+            <h2>AI-Powered Graphic Designer & Content Creative</h2>
+            <p>
+              <span data-lang="en">I create visual content that blends design sensibility, fast learning, and thoughtful use of AI.</span>
+              <span data-lang="es">Creo contenido visual que combina sensibilidad de diseño, aprendizaje rápido y un uso estratégico de la IA.</span>
+            </p>
+
+            <div class="button-row">
+              <a class="btn primary" href="#work">
+                <span data-lang="en">View Work</span>
+                <span data-lang="es">Ver proyectos</span>
+              </a>
+              <a class="btn secondary" href="#contact">
+                <span data-lang="en">Let’s Work Together</span>
+                <span data-lang="es">Trabajemos juntas/os</span>
+              </a>
+              <!-- Replace href with your CV file -->
+              <a class="btn secondary" href="assets/cv/CV_Fernanda_English.pdf" download>
+                <span data-lang="en">Download CV</span>
+                <span data-lang="es">Descargar CV</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">About</div>
+            <h2 class="section-title">
+              <span data-lang="en">Creative direction, AI and visual taste.</span>
+              <span data-lang="es">Dirección creativa, IA y criterio visual.</span>
+            </h2>
+          </div>
+          <p class="section-note">
+            <span data-lang="en">Short, visual and focused on what I create.</span>
+            <span data-lang="es">Breve, visual y enfocado en lo que creo.</span>
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="paper-card about-copy">
+            <p data-lang="en">I’m a Communication and Marketing student focused on AI-powered graphic design, visual content and creative production for brands.</p>
+            <p data-lang="en">I enjoy turning ideas into polished visual pieces, building prompts with intention, refining results, and adapting each asset to the brand’s tone, platform and objective. My work combines design sensitivity, trend awareness, fast learning and hands-on editing to create content that feels current, useful and visually memorable.</p>
+
+            <p data-lang="es">Soy estudiante de Comunicación y Marketing, enfocada en diseño gráfico con IA, contenido visual y producción creativa para marcas.</p>
+            <p data-lang="es">Disfruto transformar ideas en piezas visuales pulidas, construir prompts con intención, refinar resultados y adaptar cada contenido al tono, plataforma y objetivo de la marca. Mi trabajo combina sensibilidad visual, atención a tendencias, aprendizaje rápido y edición práctica para crear contenido actual, útil y memorable.</p>
+
+            <div class="tag-list">
+              <span class="tag">AI Visuals</span>
+              <span class="tag">Social Media</span>
+              <span class="tag">Prompt Design</span>
+              <span class="tag">EDM Design</span>
+              <span class="tag">Creative Content</span>
+            </div>
+          </div>
+
+          <div class="paper-card blue avatar-card">
+            <div class="avatar-circle">FO</div>
+            <strong>Visual avatar / creative figure</strong>
+            <p style="max-width: 260px; margin-top: 8px; color: rgba(30,30,30,0.70);">
+              <span data-lang="en">Replace this with your avatar or animated visual identity.</span>
+              <span data-lang="es">Reemplaza esto por tu avatar o identidad visual animada.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="what">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">What I Do</div>
+            <h2 class="section-title">
+              <span data-lang="en">Visual content built with intention.</span>
+              <span data-lang="es">Contenido visual creado con intención.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="what-grid">
+          <article class="service-card"><div class="service-icon">01</div><h3>AI Visual Direction</h3><p>I guide AI-generated visuals through clear concepts, references, composition, style and brand intention.</p></article>
+          <article class="service-card"><div class="service-icon">02</div><h3>Social Media Design</h3><p>I create visual assets for Instagram, Facebook, LinkedIn and digital campaigns.</p></article>
+          <article class="service-card"><div class="service-icon">03</div><h3>Creative Content for Brands</h3><p>I transform commercial ideas into visuals aligned with each brand identity.</p></article>
+          <article class="service-card"><div class="service-icon">04</div><h3>Email Design & Visual Campaigns</h3><p>I structure and design newsletters, campaign visuals and promotional content.</p></article>
+          <article class="service-card"><div class="service-icon">05</div><h3>Prompt Structuring</h3><p>I build detailed prompts that improve consistency, control and final visual quality.</p></article>
+          <article class="service-card"><div class="service-icon">06</div><h3>Brand-Aligned Visual Systems</h3><p>I create content that feels cohesive across formats, platforms and campaigns.</p></article>
+          <article class="service-card"><div class="service-icon">07</div><h3>Content Planning</h3><p>I organize ideas into calendars, pillars, captions, CTAs and visual directions.</p></article>
+          <article class="service-card"><div class="service-icon">08</div><h3>AI Video Development</h3><p>I turn static visuals into dynamic pieces for social media and digital storytelling.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Selected Work</div>
+            <h2 class="section-title">
+              <span data-lang="en">Projects that show how I think visually.</span>
+              <span data-lang="es">Proyectos que muestran cómo pienso visualmente.</span>
+            </h2>
+          </div>
+          <p class="section-note">
+            <span data-lang="en">A mix of case study and visual gallery: AI visuals, content, EDMs, videos and brand direction.</span>
+            <span data-lang="es">Una mezcla de caso de estudio y galería visual: piezas con IA, contenido, EDMs, videos y dirección de marca.</span>
+          </p>
+        </div>
+
+        <div class="work-stack">
+          <!-- MAHER -->
+          <article class="project">
+            <div class="project-main">
+              <div class="project-copy">
+                <div>
+                  <div class="section-kicker">01 · New Zealand Brand</div>
+                  <h3>Maher — Premium Fashion Content & AI Visuals</h3>
+                  <p data-lang="en">For Maher, a premium New Zealand footwear brand, I create AI-assisted visual content focused on elegance, fashion appeal and product visibility. My work includes creative covers, model-based visuals using real shoe references, EDM structures and AI videos designed to make each collection feel more desirable and campaign-ready.</p>
+                  <p data-lang="es">Para Maher, una marca premium de calzado en Nueva Zelanda, desarrollo contenido visual con IA enfocado en elegancia, estética de moda y visibilidad de producto. Mi trabajo incluye portadas creativas, imágenes con modelos usando referencias reales de zapatos, estructuras de EDMs y videos con IA pensados para hacer cada colección más atractiva y lista para campaña.</p>
+                  <div class="tag-list">
+                    <span class="tag">AI Visuals</span><span class="tag">Fashion Content</span><span class="tag">EDM Design</span><span class="tag">AI Video</span>
+                  </div>
+                </div>
+                <div class="asset-list">
+                  <div class="asset-item">4 creative covers</div>
+                  <div class="asset-item">4 model + real shoe visuals</div>
+                  <div class="asset-item">2 visual EDMs</div>
+                  <div class="asset-item">1 horizontal AI video</div>
+                </div>
+              </div>
+
+              <div class="project-gallery">
+                <div class="media-tile big">Replace: Maher hero cover<span class="media-label">Creative Cover</span></div>
+                <div class="media-tile phone tall">Replace: Model + shoes<span class="media-label">AI Fashion Visual</span></div>
+                <div class="media-tile small">Replace: EDM 1<span class="media-label">EDM</span></div>
+                <div class="media-tile small">Replace: EDM 2<span class="media-label">EDM</span></div>
+                <div class="media-tile wide">Replace: Horizontal AI video<span class="media-label">AI Video</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- YETITECH -->
+          <article class="project">
+            <div class="project-main">
+              <div class="project-copy">
+                <div>
+                  <div class="section-kicker">02 · Agency Content</div>
+                  <h3>Yetitech — AI Content, Mascot Creation & Agency Visual Renewal</h3>
+                  <p data-lang="en">At Yetitech, I create ideas, prompts and visual assets for a digital agency looking to become more active and visually consistent online. My work includes social media posts, AI-generated mascot concepts, Meta ad creatives, content calendars and AI videos, always adapting the creative direction to a more modern, polished and high-performance agency presence.</p>
+                  <p data-lang="es">En Yetitech, desarrollo ideas, prompts y piezas visuales para una agencia digital que busca ser más constante y renovar progresivamente su presencia visual. Mi trabajo incluye posts para redes, creación de la mascota con IA, creatividades para Meta Ads, calendarios de contenido y videos con IA, cuidando que la estética se sienta moderna, profesional y alineada a la agencia.</p>
+                  <div class="tag-list">
+                    <span class="tag">AI Content</span><span class="tag">Mascot Design</span><span class="tag">Meta Ads</span><span class="tag">Content Calendar</span>
+                  </div>
+                  <div class="highlight-bar"><strong>The Yeti Mascot</strong><br>A visual character developed to make the agency feel more recognizable and memorable.</div>
+                  <div class="highlight-bar"><strong>Meta Ad Creatives</strong><br>AI-assisted visuals created for paid social campaigns, designed to feel premium, clear and conversion-oriented.</div>
+                </div>
+                <div class="asset-list">
+                  <div class="asset-item">3 social media posts</div>
+                  <div class="asset-item">3 mascot creation images</div>
+                  <div class="asset-item">3 Meta ad creatives</div>
+                  <div class="asset-item">2 content calendars</div>
+                  <div class="asset-item">2 AI videos</div>
+                </div>
+              </div>
+
+              <div class="project-gallery">
+                <div class="media-tile big">Replace: Yeti mascot<span class="media-label">Mascot</span></div>
+                <div class="media-tile small">Replace: Meta ad 1<span class="media-label">Meta Ad</span></div>
+                <div class="media-tile small">Replace: Meta ad 2<span class="media-label">Meta Ad</span></div>
+                <div class="media-tile wide">Replace: Content calendar<span class="media-label">Calendar</span></div>
+                <div class="media-tile phone tall">Replace: AI video thumbnail<span class="media-label">AI Video</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- NADA BAKERY -->
+          <article class="project">
+            <div class="project-main">
+              <div class="project-copy">
+                <div>
+                  <div class="section-kicker">03 · New Zealand Brand</div>
+                  <h3>Nada Bakery — AI Product Transformation for Social Media</h3>
+                  <p data-lang="en">For Nada Bakery, I transform real product photos into more polished and appetizing social media visuals while preserving the original product. The challenge is to improve quality, lighting, composition and brand appeal without making the result feel artificial or disconnected from the bakery’s identity.</p>
+                  <p data-lang="es">Para Nada Bakery, transformo fotos reales de producto en piezas más estéticas, apetitosas y listas para redes sociales, manteniendo la esencia del producto original. El reto está en mejorar calidad, iluminación, composición y atractivo visual sin que el resultado se vea artificial o alejado de la identidad de la panadería.</p>
+                  <div class="tag-list">
+                    <span class="tag">Before & After</span><span class="tag">AI Editing</span><span class="tag">Product Content</span>
+                  </div>
+                </div>
+                <div class="asset-list">
+                  <div class="asset-item">3 before/after visuals</div>
+                  <div class="asset-item">Original photo → AI visual direction → final asset</div>
+                </div>
+              </div>
+
+              <div class="project-gallery">
+                <div class="before-after">
+                  <div class="media-tile">Replace: Original photo 1<span class="media-label">Before</span></div>
+                  <div class="media-tile">Replace: Final image 1<span class="media-label">After</span></div>
+                </div>
+                <div class="before-after">
+                  <div class="media-tile">Replace: Original photo 2<span class="media-label">Before</span></div>
+                  <div class="media-tile">Replace: Final image 2<span class="media-label">After</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- BAKING NZ -->
+          <article class="project">
+            <div class="project-main">
+              <div class="project-copy">
+                <div>
+                  <div class="section-kicker">04 · New Zealand Association</div>
+                  <h3>Baking New Zealand — Editorial Content & Slice Magazine Collaboration</h3>
+                  <p data-lang="en">For Baking New Zealand, I support the creation of visual content designed to increase community interaction and strengthen the association’s digital presence. I also collaborated on the first 2026 edition of Slice Magazine, developed after the Hot Cross Bun competition, helping generate visuals under specific creative and brand requirements within a tight production timeline.</p>
+                  <p data-lang="es">Para Baking New Zealand, apoyo en la creación de contenido visual pensado para generar interacción en la comunidad y fortalecer la presencia digital de la asociación. También participé en la primera edición 2026 de Slice Magazine, desarrollada después de la competencia de Hot Cross Buns, ayudando a generar imágenes bajo parámetros creativos y de marca en un plazo ajustado de producción.</p>
+                  <div class="tag-list">
+                    <span class="tag">Editorial Design</span><span class="tag">Community Content</span><span class="tag">Magazine</span>
+                  </div>
+                  <div class="highlight-bar"><strong>Slice Magazine</strong><br>A collaborative editorial project created within one month for the New Zealand baking industry.</div>
+                </div>
+                <div class="asset-list">
+                  <div class="asset-item">3 social media posts</div>
+                  <div class="asset-item">1 special block for Slice Magazine</div>
+                </div>
+              </div>
+
+              <div class="project-gallery">
+                <div class="media-tile big">Replace: Slice Magazine visual<span class="media-label">Slice Magazine</span></div>
+                <div class="media-tile small">Replace: Post 1<span class="media-label">Social Post</span></div>
+                <div class="media-tile small">Replace: Post 2<span class="media-label">Social Post</span></div>
+                <div class="media-tile wide">Replace: Post 3<span class="media-label">Community Content</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PONTE BONITA -->
+          <article class="project">
+            <div class="project-main">
+              <div class="project-copy">
+                <div>
+                  <div class="section-kicker">05 · Brand Direction</div>
+                  <h3>Ponte Bonita — Brand, Shoots & UGC Content Direction</h3>
+                  <p data-lang="en">Before focusing on AI content, I worked closely with Ponte Bonita’s internal brand operations, supporting content ideas, video structures, shooting organization and influencer collaborations. This experience helped me understand how visual content connects with brand perception, customer experience and social media performance.</p>
+                  <p data-lang="es">Antes de enfocarme en contenido con IA, trabajé de cerca en la organización interna de Ponte Bonita, aportando ideas de contenido, estructuras para videos, organización de shootings y gestión de colaboraciones con influencers. Esta experiencia me ayudó a entender cómo el contenido visual conecta con la percepción de marca, la experiencia del cliente y el rendimiento en redes.</p>
+                  <div class="tag-list">
+                    <span class="tag">Shoot Direction</span><span class="tag">UGC</span><span class="tag">Influencer Coordination</span>
+                  </div>
+                </div>
+                <div class="asset-list">
+                  <div class="asset-item">2 shooting videos</div>
+                  <div class="asset-item">1 general brand/content video</div>
+                  <div class="asset-item">2 UGC videos</div>
+                  <div class="asset-item">Content ideas or video structures</div>
+                </div>
+              </div>
+
+              <div class="project-gallery">
+                <div class="media-tile wide">Replace: Shooting video 1<span class="media-label">Shooting</span></div>
+                <div class="media-tile wide">Replace: Brand video<span class="media-label">Brand Video</span></div>
+                <div class="media-tile phone tall">Replace: UGC video 1<span class="media-label">UGC</span></div>
+                <div class="media-tile phone tall">Replace: UGC video 2<span class="media-label">UGC</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">AI Creative Direction</div>
+            <h2 class="section-title">
+              <span data-lang="en">A good AI result starts before the image is generated.</span>
+              <span data-lang="es">Un buen resultado con IA empieza antes de generar la imagen.</span>
+            </h2>
+          </div>
+          <p class="section-note">
+            <span data-lang="en">I use AI as a creative production tool, not as a random image generator.</span>
+            <span data-lang="es">Uso la IA como herramienta de producción creativa, no como generador aleatorio.</span>
+          </p>
+        </div>
+
+        <div class="paper-card yellow">
+          <div class="process-grid">
+            <article class="process-step"><div class="process-num">1</div><h3>Idea</h3><p>Define the message, objective and visual intention.</p></article>
+            <article class="process-step"><div class="process-num">2</div><h3>Visual Direction</h3><p>Set the style, mood, composition, lighting and brand personality.</p></article>
+            <article class="process-step"><div class="process-num">3</div><h3>Prompt Structure</h3><p>Build a detailed prompt, often in JSON, to keep the request controlled.</p></article>
+            <article class="process-step"><div class="process-num">4</div><h3>AI Generation</h3><p>Generate options, compare results and select the strongest direction.</p></article>
+            <article class="process-step"><div class="process-num">5</div><h3>Refinement</h3><p>Edit details, correct composition and polish the piece in Canva or Adobe.</p></article>
+            <article class="process-step"><div class="process-num">6</div><h3>Final Asset</h3><p>Deliver a visual ready for social media, EDMs, campaigns or brand content.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="json">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Why JSON Prompts?</div>
+            <h2 class="section-title">
+              <span data-lang="en">More control, more consistency, better visuals.</span>
+              <span data-lang="es">Más control, más consistencia, mejores visuales.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="json-grid">
+          <div class="paper-card">
+<pre>{
+  "objective": "Create a premium social media visual for a fashion footwear campaign.",
+  "visual_style": "Editorial, elegant, polished, fashion-forward and premium.",
+  "composition": "Use a strong central visual, clean negative space, soft lighting and a clear area for text.",
+  "brand_rules": "Keep the product realistic, preserve the shoe shape, colors and premium feeling.",
+  "text_area": "Leave readable space for campaign headline and CTA.",
+  "format": "4:5 vertical format for Instagram and Meta Ads.",
+  "restrictions": "Avoid distorted products, messy backgrounds, unrealistic textures and generic AI aesthetics."
+}</pre>
+            <p style="margin: 18px 0; color: rgba(30,30,30,0.72);">
+              <span data-lang="en">JSON prompts help me separate creative decisions into clear sections, making the result easier to guide, repeat, scale and refine.</span>
+              <span data-lang="es">Los prompts en JSON me ayudan a separar decisiones creativas en secciones claras, haciendo que el resultado sea más fácil de dirigir, repetir, escalar y perfeccionar.</span>
+            </p>
+            <button class="btn dark" type="button" id="openResult">
+              <span data-lang="en">Click to see the result</span>
+              <span data-lang="es">Clic para ver el resultado</span>
+            </button>
+          </div>
+
+          <div class="paper-card pink">
+            <div class="callout-list">
+              <div class="callout"><strong>Objective</strong><span>Defines what the image needs to achieve.</span></div>
+              <div class="callout"><strong>Visual Style</strong><span>Controls the aesthetic direction and mood.</span></div>
+              <div class="callout"><strong>Composition</strong><span>Guides layout, hierarchy and product placement.</span></div>
+              <div class="callout"><strong>Brand Rules</strong><span>Protects identity, colors and visual consistency.</span></div>
+              <div class="callout"><strong>Restrictions</strong><span>Prevents unwanted results and off-brand elements.</span></div>
+              <div class="callout"><strong>Format</strong><span>Adapts the result to the final platform.</span></div>
+              <div class="callout"><strong>CTA / Text Area</strong><span>Plans readable areas for campaign messages.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Tools</div>
+            <h2 class="section-title">
+              <span data-lang="en">Creative tools I use to build, polish and publish.</span>
+              <span data-lang="es">Herramientas que uso para crear, pulir y publicar.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="tools-grid">
+          <div class="tool-card"><h3>Design & Editing</h3><div class="tool-tags"><span class="tool-chip">Canva</span><span class="tool-chip">Photoshop</span><span class="tool-chip">Illustrator</span><span class="tool-chip">InDesign</span><span class="tool-chip">CapCut</span></div></div>
+          <div class="tool-card"><h3>AI & Creative Production</h3><div class="tool-tags"><span class="tool-chip">OpenAI</span><span class="tool-chip">Flow</span><span class="tool-chip">Artlist</span></div></div>
+          <div class="tool-card"><h3>Marketing & Platforms</h3><div class="tool-tags"><span class="tool-chip">Klaviyo</span><span class="tool-chip">Mailchimp</span><span class="tool-chip">Meta Business Suite</span></div></div>
+          <div class="tool-card"><h3>Organization & Workflow</h3><div class="tool-tags"><span class="tool-chip">Excel</span><span class="tool-chip">Google Workspace</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <h2>Let’s Create Something Great</h2>
+            <p>
+              <span data-lang="en">Technology keeps evolving at an incredible pace. I believe the real value lies in using AI with taste, direction and purpose.</span>
+              <span data-lang="es">La tecnología avanza a un ritmo increíble. Creo que el verdadero valor está en usar la IA con criterio, dirección y propósito.</span>
+            </p>
+
+            <div class="contact-links">
+              <a class="btn primary" href="mailto:fernandaordayaob@gmail.com">Email</a>
+              <a class="btn primary" href="tel:+51902722925">Phone</a>
+              <a class="btn primary" href="https://www.linkedin.com/in/maria-fernanda-ordaya-oblitas-b083613b5" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="btn primary" href="https://www.instagram.com/ferordaya" target="_blank" rel="noreferrer">Instagram</a>
+              <a class="btn dark" href="assets/cv/CV_Fernanda_English.pdf" download>CV English</a>
+              <a class="btn dark" href="assets/cv/CV_Fernanda_Espanol.pdf" download>CV Spanish</a>
+            </div>
+          </div>
+
+          <div class="photo-placeholder">
+            <!-- Replace with your photo:
+                 <img src="assets/images/fernanda-photo.jpg" alt="Fernanda Ordaya Oblitas">
+            -->
+            Personal photo placeholder
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Fernanda Ordaya Oblitas · AI-Powered Graphic Designer & Content Creative
+  </footer>
+
+  <div class="modal" id="resultModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="closeResult" type="button">×</button>
+      <div class="modal-placeholder">
+        <!-- Replace this area with the real result image:
+             <img src="assets/images/json-prompt-result.jpg" alt="Final AI visual result">
+        -->
+        Final image result placeholder
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const langToggle = document.getElementById("langToggle");
+    langToggle.addEventListener("click", () => {
+      document.body.classList.toggle("spanish");
+      langToggle.textContent = document.body.classList.contains("spanish") ? "EN / ES" : "ES / EN";
+      document.documentElement.lang = document.body.classList.contains("spanish") ? "es" : "en";
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const modal = document.getElementById("resultModal");
+    const openResult = document.getElementById("openResult");
+    const closeResult = document.getElementById("closeResult");
+
+    openResult.addEventListener("click", () => {
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+    });
+
+    closeResult.addEventListener("click", () => {
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+      }
+    });
+  </script>
+</body>
+</html>
