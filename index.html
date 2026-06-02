@@ -15,7 +15,6 @@
       --pearl-bush: #E6E0C4;
       --glacier: #86ABCB;
 
-      --paper: #F8F6EF;
       --black: #261B17;
       --white: #FFFFFF;
       --soft-shadow: 0 18px 50px rgba(30, 30, 30, 0.12);
@@ -952,6 +951,75 @@
     .tag::before { color: var(--pastel-pink); }
     .media-label { background: rgba(230,224,196,0.92); color: var(--irish-coffee); }
 
+
+    /* Full visual galleries: preserve original formats and remove small labels */
+    .media-label { display: none !important; }
+
+    .project-gallery {
+      grid-auto-rows: minmax(190px, auto);
+      align-items: stretch;
+    }
+
+    .media-tile {
+      padding: 0;
+      background: rgba(248,246,239,0.72);
+    }
+
+    .media-tile img,
+    .media-tile video {
+      position: static;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: inherit;
+      background: rgba(248,246,239,0.58);
+    }
+
+    .media-tile.big,
+    .media-tile.wide,
+    .media-tile.small,
+    .media-tile.phone,
+    .media-tile.tall {
+      min-height: 260px;
+    }
+
+    .media-tile.phone {
+      border-radius: 28px;
+      padding: 8px;
+    }
+
+    .media-tile.phone img,
+    .media-tile.phone video {
+      border-radius: 22px;
+    }
+
+    .project-gallery.gallery-full {
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: minmax(210px, auto);
+    }
+
+    .gallery-full .span-3 { grid-column: span 3; }
+    .gallery-full .span-4 { grid-column: span 4; }
+    .gallery-full .span-5 { grid-column: span 5; }
+    .gallery-full .span-6 { grid-column: span 6; }
+    .gallery-full .span-7 { grid-column: span 7; }
+    .gallery-full .span-8 { grid-column: span 8; }
+    .gallery-full .row-2 { grid-row: span 2; }
+
+    @media (max-width: 980px) {
+      .project-gallery.gallery-full { grid-template-columns: repeat(2, 1fr); }
+      .gallery-full .span-3,
+      .gallery-full .span-4,
+      .gallery-full .span-5,
+      .gallery-full .span-6,
+      .gallery-full .span-7,
+      .gallery-full .span-8 { grid-column: span 1; }
+    }
+
+    @media (max-width: 640px) {
+      .project-gallery.gallery-full { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 980px) {
       .mobile-hide {
         display: none;
@@ -1218,12 +1286,17 @@
 
               </div>
 
-              <div class="project-gallery">
-                <div class="media-tile big"><img src="02_Maher/COVERS/portada_maher_1.jpeg" alt="Maher creative cover"><span class="media-label"><span data-lang="en">Creative Cover</span><span data-lang="es">Portada creativa</span></span></div>
-                <div class="media-tile phone tall"><img src="02_Maher/MODELS-SHOES/model_maher_1.jpeg" alt="Maher AI fashion visual"><span class="media-label"><span data-lang="en">AI Fashion Visual</span><span data-lang="es">Visual de moda con IA</span></span></div>
-                <div class="media-tile small"><img src="02_Maher/COVERS/portada_maher_2.jpeg" alt="Maher EDM visual"><span class="media-label">EDM</span></div>
-                <div class="media-tile small"><img src="02_Maher/COVERS/portada_maher_3.jpeg" alt="Maher EDM visual"><span class="media-label">EDM</span></div>
-                <div class="media-tile wide"><video autoplay muted loop playsinline><source src="02_Maher/VIDEO/video_maher_1.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">AI Video</span><span data-lang="es">Video con IA</span></span></div>
+              <div class="project-gallery gallery-full">
+                <div class="media-tile span-6 row-2"><img src="02_Maher/COVERS/portada_maher_1.jpeg" alt="Maher creative cover 1"></div>
+                <div class="media-tile span-3 row-2 phone"><img src="02_Maher/MODELS-SHOES/model_maher_1.jpeg" alt="Maher model and shoes visual 1"></div>
+                <div class="media-tile span-3"><img src="02_Maher/COVERS/portada_maher_2.jpeg" alt="Maher creative cover 2"></div>
+                <div class="media-tile span-3"><img src="02_Maher/COVERS/portada_maher_3.jpeg" alt="Maher creative cover 3"></div>
+                <div class="media-tile span-4"><img src="02_Maher/COVERS/portada_maher_4.png" alt="Maher creative cover 4"></div>
+                <div class="media-tile span-4 phone"><img src="02_Maher/MODELS-SHOES/model_maher_2.jpeg" alt="Maher model and shoes visual 2"></div>
+                <div class="media-tile span-4 phone"><img src="02_Maher/MODELS-SHOES/model_maher_3.png" alt="Maher model and shoes visual 3"></div>
+                <div class="media-tile span-4 phone"><img src="02_Maher/MODELS-SHOES/model_maher_4.png" alt="Maher model and shoes visual 4"></div>
+                <div class="media-tile span-6"><video autoplay muted loop playsinline><source src="02_Maher/VIDEO/video_maher_1.mp4" type="video/mp4"></video></div>
+                <div class="media-tile span-6"><video autoplay muted loop playsinline><source src="02_Maher/VIDEO/video_maher_2.mp4" type="video/mp4"></video></div>
               </div>
             </div>
           </article>
@@ -1246,12 +1319,18 @@
 
               </div>
 
-              <div class="project-gallery">
-                <div class="media-tile big"><img src="03_Yetitech/MASCOT/mascota_1.jpeg" alt="Yetitech mascot"><span class="media-label"><span data-lang="en">Mascot</span><span data-lang="es">Mascota</span></span></div>
-                <div class="media-tile small"><img src="03_Yetitech/ADDS/add_1.jpeg" alt="Yetitech Meta ad"><span class="media-label"><span data-lang="en">Meta Ad</span><span data-lang="es">Anuncio Meta</span></span></div>
-                <div class="media-tile small"><img src="03_Yetitech/ADDS/add_2.jpeg" alt="Yetitech Meta ad"><span class="media-label"><span data-lang="en">Meta Ad</span><span data-lang="es">Anuncio Meta</span></span></div>
-                <div class="media-tile wide"><img src="03_Yetitech/CONTENT-CALENDAR/calendar_1.png" alt="Yetitech content calendar"><span class="media-label"><span data-lang="en">Calendar</span><span data-lang="es">Calendario</span></span></div>
-                <div class="media-tile phone tall"><video autoplay muted loop playsinline><source src="03_Yetitech/VIDEOS/video_yetitech.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">AI Video</span><span data-lang="es">Video con IA</span></span></div>
+              <div class="project-gallery gallery-full">
+                <div class="media-tile span-4"><img src="03_Yetitech/POSTS/post_1.jpeg" alt="Yetitech social media post 1"></div>
+                <div class="media-tile span-4"><img src="03_Yetitech/POSTS/post_2.jpeg" alt="Yetitech social media post 2"></div>
+                <div class="media-tile span-4"><img src="03_Yetitech/POSTS/post_3.jpeg" alt="Yetitech social media post 3"></div>
+                <div class="media-tile span-6"><img src="03_Yetitech/MASCOT/mascota_1.jpeg" alt="Yetitech mascot visual 1"></div>
+                <div class="media-tile span-6"><img src="03_Yetitech/MASCOT/mascota_2.jpeg" alt="Yetitech mascot visual 2"></div>
+                <div class="media-tile span-4"><img src="03_Yetitech/ADDS/add_1.jpeg" alt="Yetitech Meta ad creative 1"></div>
+                <div class="media-tile span-4"><img src="03_Yetitech/ADDS/add_2.jpeg" alt="Yetitech Meta ad creative 2"></div>
+                <div class="media-tile span-4"><img src="03_Yetitech/ADDS/add_3.jpeg" alt="Yetitech Meta ad creative 3"></div>
+                <div class="media-tile span-6"><img src="03_Yetitech/CONTENT-CALENDAR/calendar_1.png" alt="Yetitech content calendar 1"></div>
+                <div class="media-tile span-6"><img src="03_Yetitech/CONTENT-CALENDAR/calendar_2.png" alt="Yetitech content calendar 2"></div>
+                <div class="media-tile span-12"><video autoplay muted loop playsinline><source src="03_Yetitech/VIDEOS/video_yetitech.mp4" type="video/mp4"></video></div>
               </div>
             </div>
           </article>
@@ -1272,15 +1351,10 @@
 
               </div>
 
-              <div class="project-gallery">
-                <div class="before-after">
-                  <div class="media-tile"><img src="04_Nada_Bakery/before-after-01.jpg" alt="Nada Bakery before and after visual"><span class="media-label"><span data-lang="en">Before / After</span><span data-lang="es">Antes / Después</span></span></div>
-                  <div class="media-tile"><img src="04_Nada_Bakery/before-after-02.jpg" alt="Nada Bakery before and after visual"><span class="media-label"><span data-lang="en">Before / After</span><span data-lang="es">Antes / Después</span></span></div>
-                </div>
-                <div class="before-after">
-                  <div class="media-tile"><img src="04_Nada_Bakery/before-after-03.jpg" alt="Nada Bakery before and after visual"><span class="media-label"><span data-lang="en">Before / After</span><span data-lang="es">Antes / Después</span></span></div>
-                  <div class="media-tile"><img src="04_Nada_Bakery/before-after-01.jpg" alt="Nada Bakery before and after visual"><span class="media-label"><span data-lang="en">Before / After</span><span data-lang="es">Antes / Después</span></span></div>
-                </div>
+              <div class="project-gallery gallery-full">
+                <div class="media-tile span-4"><img src="04_Nada_Bakery/before-after-01.jpg" alt="Nada Bakery before and after visual 1"></div>
+                <div class="media-tile span-4"><img src="04_Nada_Bakery/before-after-02.jpg" alt="Nada Bakery before and after visual 2"></div>
+                <div class="media-tile span-4"><img src="04_Nada_Bakery/before-after-03.jpg" alt="Nada Bakery before and after visual 3"></div>
               </div>
             </div>
           </article>
@@ -1302,11 +1376,11 @@
 
               </div>
 
-              <div class="project-gallery">
-                <div class="media-tile big"><img src="05_Baking_NZ/SLICE-MAGAZINE/portada_slice.png" alt="Slice Magazine cover"><span class="media-label"><span data-lang="en">Slice Magazine</span><span data-lang="es">Revista Slice</span></span></div>
-                <div class="media-tile small"><img src="05_Baking_NZ/POSTS/post_baking_1.png" alt="Baking NZ social post"><span class="media-label"><span data-lang="en">Social Post</span><span data-lang="es">Post para redes</span></span></div>
-                <div class="media-tile small"><img src="05_Baking_NZ/POSTS/post_baking_2.png" alt="Baking NZ social post"><span class="media-label"><span data-lang="en">Social Post</span><span data-lang="es">Post para redes</span></span></div>
-                <div class="media-tile wide"><img src="05_Baking_NZ/POSTS/post_baking_3.png" alt="Baking NZ social post"><span class="media-label"><span data-lang="en">Community Content</span><span data-lang="es">Contenido comunitario</span></span></div>
+              <div class="project-gallery gallery-full">
+                <div class="media-tile span-6 row-2"><img src="05_Baking_NZ/SLICE-MAGAZINE/portada_slice.png" alt="Slice Magazine cover"></div>
+                <div class="media-tile span-6"><img src="05_Baking_NZ/POSTS/post_baking_1.png" alt="Baking New Zealand social post 1"></div>
+                <div class="media-tile span-3"><img src="05_Baking_NZ/POSTS/post_baking_2.png" alt="Baking New Zealand social post 2"></div>
+                <div class="media-tile span-3"><img src="05_Baking_NZ/POSTS/post_baking_3.png" alt="Baking New Zealand social post 3"></div>
               </div>
             </div>
           </article>
@@ -1327,11 +1401,12 @@
 
               </div>
 
-              <div class="project-gallery">
-                <div class="media-tile wide"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/SHOOTING/shooting_1.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">Shooting</span><span data-lang="es">Shooting</span></span></div>
-                <div class="media-tile wide"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/VIDEOS/video_pontebonita_1.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">Brand Video</span><span data-lang="es">Video de marca</span></span></div>
-                <div class="media-tile phone tall"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/UGC/ugc_1.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">UGC</span><span data-lang="es">UGC</span></span></div>
-                <div class="media-tile phone tall"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/UGC/ugc_2.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">UGC</span><span data-lang="es">UGC</span></span></div>
+              <div class="project-gallery gallery-full">
+                <div class="media-tile span-6"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/SHOOTING/shooting_1.mp4" type="video/mp4"></video></div>
+                <div class="media-tile span-6"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/SHOOTING/shooting_2.mp4" type="video/mp4"></video></div>
+                <div class="media-tile span-4 phone"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/UGC/ugc_1.mp4" type="video/mp4"></video></div>
+                <div class="media-tile span-4 phone"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/UGC/ugc_2.mp4" type="video/mp4"></video></div>
+                <div class="media-tile span-4"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/VIDEOS/video_pontebonita_1.mp4" type="video/mp4"></video></div>
               </div>
             </div>
           </article>
