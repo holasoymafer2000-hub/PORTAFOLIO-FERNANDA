@@ -7,13 +7,20 @@
   <meta name="description" content="Portfolio of Fernanda Ordaya Oblitas, AI-Powered Graphic Designer & Content Creative." />
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
     :root {
-      --vista-blue: #78A2D2;
-      --mindaro: #FEFFAF;
-      --cream: #FAFFC7;
-      --cherry: #F8A8B9;
+      --pastel-pink: #E5A2A0;
+      --irish-coffee: #6B3C2E;
+      --pearl-bush: #E6E0C4;
+      --glacier: #86ABCB;
+
+      --vista-blue: #86ABCB;
+      --mindaro: #E6E0C4;
+      --cream: #E6E0C4;
+      --cherry: #E5A2A0;
       --paper: #F8F6EF;
-      --black: #1E1E1E;
+      --black: #261B17;
       --blue-grey: #D7E3EC;
       --white: #FFFFFF;
       --soft-shadow: 0 18px 50px rgba(30, 30, 30, 0.12);
@@ -35,11 +42,12 @@
     }
 
     body {
-      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Lato", "Nunito", "Helvetica Neue", Arial, sans-serif;
       background:
-        radial-gradient(circle at 12% 8%, rgba(248,168,185,0.28), transparent 28%),
-        radial-gradient(circle at 88% 18%, rgba(254,255,175,0.38), transparent 26%),
-        linear-gradient(180deg, #F8F6EF 0%, #F4F1E8 100%);
+        radial-gradient(circle at 12% 8%, rgba(229,162,160,0.36), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(134,171,203,0.34), transparent 26%),
+        radial-gradient(circle at 45% 90%, rgba(107,60,46,0.12), transparent 24%),
+        linear-gradient(180deg, #F8F6EF 0%, #E6E0C4 100%);
       color: var(--black);
       line-height: 1.5;
       overflow-x: hidden;
@@ -108,7 +116,7 @@
       display: grid;
       place-items: center;
       color: var(--paper);
-      font-family: Georgia, serif;
+      font-family: "Neulis Cursive", Georgia, serif;
       font-size: 18px;
       box-shadow: inset 0 0 0 2px rgba(255,255,255,0.42);
     }
@@ -239,7 +247,7 @@
     }
 
     .hero h1 {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Neulis Cursive", Georgia, "Times New Roman", serif;
       font-size: clamp(48px, 8vw, 110px);
       line-height: 0.92;
       letter-spacing: -0.075em;
@@ -326,7 +334,7 @@
     }
 
     .section-title {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Neulis Cursive", Georgia, "Times New Roman", serif;
       font-size: clamp(38px, 5vw, 74px);
       line-height: 0.96;
       letter-spacing: -0.06em;
@@ -391,7 +399,7 @@
         linear-gradient(135deg, var(--cherry), var(--vista-blue));
       display: grid;
       place-items: center;
-      font-family: Georgia, serif;
+      font-family: "Neulis Cursive", Georgia, serif;
       font-size: 62px;
       color: var(--paper);
       box-shadow: inset 0 0 0 10px rgba(248,246,239,0.38), var(--small-shadow);
@@ -497,7 +505,7 @@
     }
 
     .project-copy h3 {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Neulis Cursive", Georgia, "Times New Roman", serif;
       font-size: clamp(32px, 4vw, 58px);
       line-height: 0.96;
       letter-spacing: -0.055em;
@@ -764,7 +772,7 @@
     }
 
     .contact-card h2 {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Neulis Cursive", Georgia, "Times New Roman", serif;
       font-size: clamp(42px, 6vw, 86px);
       line-height: 0.94;
       letter-spacing: -0.065em;
@@ -875,6 +883,79 @@
       font-weight: 900;
       padding: 24px;
     }
+
+
+    .section-title,
+    .project-copy h3,
+    .contact-card h2 { color: var(--irish-coffee); }
+
+    .hero h1, .hero h2, .hero p, .hero .eyebrow { color: var(--paper); }
+
+    .project-copy { justify-content: flex-start; gap: 18px; }
+    .asset-list { display: none !important; }
+
+    .avatar-card {
+      background: linear-gradient(160deg, rgba(134,171,203,0.92), rgba(229,162,160,0.42));
+    }
+
+    .avatar-image, .contact-photo {
+      width: min(290px, 100%);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 24px rgba(38,27,23,0.18));
+    }
+
+    .photo-placeholder { background: rgba(230,224,196,0.62); }
+
+    #tools {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      border-radius: 44px;
+      margin: 40px auto;
+      width: min(calc(100% - 24px), 1500px);
+      background: rgba(230,224,196,0.72);
+    }
+
+    .tools-bg-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.28;
+      z-index: -2;
+      filter: saturate(1.12) contrast(1.05);
+    }
+
+    #tools::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(248,246,239,0.92), rgba(248,246,239,0.62)),
+        radial-gradient(circle at 85% 20%, rgba(229,162,160,0.38), transparent 28%),
+        radial-gradient(circle at 20% 90%, rgba(134,171,203,0.35), transparent 28%);
+      z-index: -1;
+    }
+
+    .tools-grid .tool-card {
+      background: rgba(248,246,239,0.72);
+      backdrop-filter: blur(10px);
+    }
+
+    .tool-chip {
+      background: rgba(134,171,203,0.22);
+      border-color: rgba(134,171,203,0.38);
+    }
+
+    .tool-chip::before { color: var(--pastel-pink); }
+    .service-icon, .process-num { background: var(--pastel-pink); color: var(--irish-coffee); }
+    .btn.primary { background: var(--pastel-pink); color: var(--irish-coffee); }
+    .btn.dark { background: var(--irish-coffee); }
+    .btn.secondary { background: rgba(230,224,196,0.25); }
+    .tag::before { color: var(--pastel-pink); }
+    .media-label { background: rgba(230,224,196,0.92); color: var(--irish-coffee); }
 
     @media (max-width: 980px) {
       .mobile-hide {
@@ -988,9 +1069,9 @@
 
     <div class="nav-links">
       <div class="mobile-hide">
-        <a href="#work">Work</a>
-        <a href="#ai">AI Direction</a>
-        <a href="#contact">Contact</a>
+        <a href="#work"><span data-lang="en">Work</span><span data-lang="es">Proyectos</span></a>
+        <a href="#ai"><span data-lang="en">AI Direction</span><span data-lang="es">Dirección IA</span></a>
+        <a href="#contact"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a>
       </div>
       <button class="lang-toggle" id="langToggle" type="button">ES / EN</button>
     </div>
@@ -1005,13 +1086,15 @@
                  <source src="assets/videos/video-home-loop.mp4" type="video/mp4">
                </video>
           -->
-          <div class="hero-placeholder"></div>
+          <video class="hero-video" autoplay muted loop playsinline>
+            <source src="01_Home_video/portada.mp4" type="video/mp4">
+          </video>
           <div class="hero-overlay"></div>
 
           <div class="hero-content">
-            <span class="eyebrow">AI-driven visual designer</span>
+            <span class="eyebrow"><span data-lang="en">AI-driven visual designer</span><span data-lang="es">Diseñadora visual impulsada por IA</span></span>
             <h1>Fernanda<br>Ordaya Oblitas</h1>
-            <h2>AI-Powered Graphic Designer & Content Creative</h2>
+            <h2><span data-lang="en">AI-Powered Graphic Designer & Content Creative</span><span data-lang="es">Diseñadora Gráfica con IA & Creativa de Contenido</span></h2>
             <p>
               <span data-lang="en">I create visual content that blends design sensibility, fast learning, and thoughtful use of AI.</span>
               <span data-lang="es">Creo contenido visual que combina sensibilidad de diseño, aprendizaje rápido y un uso estratégico de la IA.</span>
@@ -1027,7 +1110,7 @@
                 <span data-lang="es">Trabajemos juntas/os</span>
               </a>
               <!-- Replace href with your CV file -->
-              <a class="btn secondary" href="assets/cv/CV_Fernanda_English.pdf" download>
+              <a class="btn secondary" href="07_CV/Fernanda_Ordaya_CV_English.pdf" download>
                 <span data-lang="en">Download CV</span>
                 <span data-lang="es">Descargar CV</span>
               </a>
@@ -1041,7 +1124,7 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="section-kicker">About</div>
+            <div class="section-kicker"><span data-lang="en">About</span><span data-lang="es">Sobre mí</span></div>
             <h2 class="section-title">
               <span data-lang="en">Creative direction, AI and visual taste.</span>
               <span data-lang="es">Dirección creativa, IA y criterio visual.</span>
@@ -1071,11 +1154,11 @@
           </div>
 
           <div class="paper-card blue avatar-card">
-            <div class="avatar-circle">FO</div>
-            <strong>Visual avatar / creative figure</strong>
+            <img class="avatar-image" src="00_personal_photo/hello.png" alt="Fernanda Ordaya avatar saying hello">
+            <strong><span data-lang="en">Creative presence</span><span data-lang="es">Presencia creativa</span></strong>
             <p style="max-width: 260px; margin-top: 8px; color: rgba(30,30,30,0.70);">
-              <span data-lang="en">Replace this with your avatar or animated visual identity.</span>
-              <span data-lang="es">Reemplaza esto por tu avatar o identidad visual animada.</span>
+              <span data-lang="en">A visual avatar to introduce my creative world.</span>
+              <span data-lang="es">Un avatar visual para presentar mi mundo creativo.</span>
             </p>
           </div>
         </div>
@@ -1086,7 +1169,7 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="section-kicker">What I Do</div>
+            <div class="section-kicker"><span data-lang="en">What I Do</span><span data-lang="es">Qué hago</span></div>
             <h2 class="section-title">
               <span data-lang="en">Visual content built with intention.</span>
               <span data-lang="es">Contenido visual creado con intención.</span>
@@ -1095,14 +1178,14 @@
         </div>
 
         <div class="what-grid">
-          <article class="service-card"><div class="service-icon">01</div><h3>AI Visual Direction</h3><p>I guide AI-generated visuals through clear concepts, references, composition, style and brand intention.</p></article>
-          <article class="service-card"><div class="service-icon">02</div><h3>Social Media Design</h3><p>I create visual assets for Instagram, Facebook, LinkedIn and digital campaigns.</p></article>
-          <article class="service-card"><div class="service-icon">03</div><h3>Creative Content for Brands</h3><p>I transform commercial ideas into visuals aligned with each brand identity.</p></article>
-          <article class="service-card"><div class="service-icon">04</div><h3>Email Design & Visual Campaigns</h3><p>I structure and design newsletters, campaign visuals and promotional content.</p></article>
-          <article class="service-card"><div class="service-icon">05</div><h3>Prompt Structuring</h3><p>I build detailed prompts that improve consistency, control and final visual quality.</p></article>
+          <article class="service-card"><div class="service-icon">01</div><h3><span data-lang="en">AI Visual Direction</span><span data-lang="es">Dirección Visual con IA</span></h3><p><span data-lang="en">I guide AI-generated visuals through clear concepts, references, composition, style and brand intention.</span><span data-lang="es">Dirijo visuales generados con IA a través de conceptos, referencias, composición, estilo e intención de marca.</span></p></article>
+          <article class="service-card"><div class="service-icon">02</div><h3><span data-lang="en">Social Media Design</span><span data-lang="es">Diseño para Redes Sociales</span></h3><p><span data-lang="en">I create visual assets for Instagram, Facebook, LinkedIn and digital campaigns.</span><span data-lang="es">Creo piezas visuales para Instagram, Facebook, LinkedIn y campañas digitales.</span></p></article>
+          <article class="service-card"><div class="service-icon">03</div><h3><span data-lang="en">Creative Content for Brands</span><span data-lang="es">Contenido Creativo para Marcas</span></h3><p><span data-lang="en">I transform commercial ideas into visuals aligned with each brand identity.</span><span data-lang="es">Transformo ideas comerciales en visuales alineados a la identidad de cada marca.</span></p></article>
+          <article class="service-card"><div class="service-icon">04</div><h3><span data-lang="en">Email Design & Visual Campaigns</span><span data-lang="es">Diseño de Emails y Campañas Visuales</span></h3><p><span data-lang="en">I structure and design newsletters, campaign visuals and promotional content.</span><span data-lang="es">Estructuro y diseño newsletters, visuales de campaña y contenido promocional.</span></p></article>
+          <article class="service-card"><div class="service-icon">05</div><h3><span data-lang="en">Prompt Structuring</span><span data-lang="es">Estructura de Prompts</span></h3><p><span data-lang="en">I build detailed prompts that improve consistency, control and final visual quality.</span><span data-lang="es">Construyo prompts detallados que mejoran la consistencia, el control y la calidad visual final.</span></p></article>
           <article class="service-card"><div class="service-icon">06</div><h3>Brand-Aligned Visual Systems</h3><p>I create content that feels cohesive across formats, platforms and campaigns.</p></article>
-          <article class="service-card"><div class="service-icon">07</div><h3>Content Planning</h3><p>I organize ideas into calendars, pillars, captions, CTAs and visual directions.</p></article>
-          <article class="service-card"><div class="service-icon">08</div><h3>AI Video Development</h3><p>I turn static visuals into dynamic pieces for social media and digital storytelling.</p></article>
+          <article class="service-card"><div class="service-icon">07</div><h3><span data-lang="en">Content Planning</span><span data-lang="es">Planificación de Contenido</span></h3><p><span data-lang="en">I organize ideas into calendars, pillars, captions, CTAs and visual directions.</span><span data-lang="es">Organizo ideas en calendarios, pilares, captions, CTAs y direcciones visuales.</span></p></article>
+          <article class="service-card"><div class="service-icon">08</div><h3><span data-lang="en">AI Video Development</span><span data-lang="es">Desarrollo de Videos con IA</span></h3><p><span data-lang="en">I turn static visuals into dynamic pieces for social media and digital storytelling.</span><span data-lang="es">Convierto visuales estáticos en piezas dinámicas para redes sociales y storytelling digital.</span></p></article>
         </div>
       </div>
     </section>
@@ -1111,7 +1194,7 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="section-kicker">Selected Work</div>
+            <div class="section-kicker"><span data-lang="en">Selected Work</span><span data-lang="es">Proyectos seleccionados</span></div>
             <h2 class="section-title">
               <span data-lang="en">Projects that show how I think visually.</span>
               <span data-lang="es">Proyectos que muestran cómo pienso visualmente.</span>
@@ -1129,7 +1212,7 @@
             <div class="project-main">
               <div class="project-copy">
                 <div>
-                  <div class="section-kicker">01 · New Zealand Brand</div>
+                  <div class="section-kicker">01 · <span data-lang="en">New Zealand Brand</span><span data-lang="es">Marca de Nueva Zelanda</span></div>
                   <h3>Maher — Premium Fashion Content & AI Visuals</h3>
                   <p data-lang="en">For Maher, a premium New Zealand footwear brand, I create AI-assisted visual content focused on elegance, fashion appeal and product visibility. My work includes creative covers, model-based visuals using real shoe references, EDM structures and AI videos designed to make each collection feel more desirable and campaign-ready.</p>
                   <p data-lang="es">Para Maher, una marca premium de calzado en Nueva Zelanda, desarrollo contenido visual con IA enfocado en elegancia, estética de moda y visibilidad de producto. Mi trabajo incluye portadas creativas, imágenes con modelos usando referencias reales de zapatos, estructuras de EDMs y videos con IA pensados para hacer cada colección más atractiva y lista para campaña.</p>
@@ -1137,20 +1220,15 @@
                     <span class="tag">AI Visuals</span><span class="tag">Fashion Content</span><span class="tag">EDM Design</span><span class="tag">AI Video</span>
                   </div>
                 </div>
-                <div class="asset-list">
-                  <div class="asset-item">4 creative covers</div>
-                  <div class="asset-item">4 model + real shoe visuals</div>
-                  <div class="asset-item">2 visual EDMs</div>
-                  <div class="asset-item">1 horizontal AI video</div>
-                </div>
+
               </div>
 
               <div class="project-gallery">
-                <div class="media-tile big">Replace: Maher hero cover<span class="media-label">Creative Cover</span></div>
-                <div class="media-tile phone tall">Replace: Model + shoes<span class="media-label">AI Fashion Visual</span></div>
-                <div class="media-tile small">Replace: EDM 1<span class="media-label">EDM</span></div>
-                <div class="media-tile small">Replace: EDM 2<span class="media-label">EDM</span></div>
-                <div class="media-tile wide">Replace: Horizontal AI video<span class="media-label">AI Video</span></div>
+                <div class="media-tile big"><img src="02_Maher/COVERS/portada_maher_1.jpeg" alt="Maher creative cover"><span class="media-label"><span data-lang="en">Creative Cover</span><span data-lang="es">Portada creativa</span></span></div>
+                <div class="media-tile phone tall"><img src="02_Maher/MODELS-SHOES/model_maher_1.jpeg" alt="Maher AI fashion visual"><span class="media-label"><span data-lang="en">AI Fashion Visual</span><span data-lang="es">Visual de moda con IA</span></span></div>
+                <div class="media-tile small"><img src="02_Maher/COVERS/portada_maher_2.jpeg" alt="Maher EDM visual"><span class="media-label">EDM</span></div>
+                <div class="media-tile small"><img src="02_Maher/COVERS/portada_maher_3.jpeg" alt="Maher EDM visual"><span class="media-label">EDM</span></div>
+                <div class="media-tile wide"><video autoplay muted loop playsinline><source src="02_Maher/VIDEO/video_maher_1.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">AI Video</span><span data-lang="es">Video con IA</span></span></div>
               </div>
             </div>
           </article>
@@ -1160,31 +1238,25 @@
             <div class="project-main">
               <div class="project-copy">
                 <div>
-                  <div class="section-kicker">02 · Agency Content</div>
+                  <div class="section-kicker">02 · <span data-lang="en">Agency Content</span><span data-lang="es">Contenido para agencia</span></div>
                   <h3>Yetitech — AI Content, Mascot Creation & Agency Visual Renewal</h3>
                   <p data-lang="en">At Yetitech, I create ideas, prompts and visual assets for a digital agency looking to become more active and visually consistent online. My work includes social media posts, AI-generated mascot concepts, Meta ad creatives, content calendars and AI videos, always adapting the creative direction to a more modern, polished and high-performance agency presence.</p>
                   <p data-lang="es">En Yetitech, desarrollo ideas, prompts y piezas visuales para una agencia digital que busca ser más constante y renovar progresivamente su presencia visual. Mi trabajo incluye posts para redes, creación de la mascota con IA, creatividades para Meta Ads, calendarios de contenido y videos con IA, cuidando que la estética se sienta moderna, profesional y alineada a la agencia.</p>
                   <div class="tag-list">
                     <span class="tag">AI Content</span><span class="tag">Mascot Design</span><span class="tag">Meta Ads</span><span class="tag">Content Calendar</span>
                   </div>
-                  <div class="highlight-bar"><strong>The Yeti Mascot</strong><br>A visual character developed to make the agency feel more recognizable and memorable.</div>
-                  <div class="highlight-bar"><strong>Meta Ad Creatives</strong><br>AI-assisted visuals created for paid social campaigns, designed to feel premium, clear and conversion-oriented.</div>
+                  <div class="highlight-bar"><strong><span data-lang="en">The Yeti Mascot</span><span data-lang="es">La mascota de Yeti</span></strong><br><span data-lang="en">A visual character developed to make the agency feel more recognizable and memorable.</span><span data-lang="es">Un personaje visual desarrollado para hacer que la agencia se sienta más reconocible y memorable.</span></div>
+                  <div class="highlight-bar"><strong><span data-lang="en">Meta Ad Creatives</span><span data-lang="es">Creatividades para Meta Ads</span></strong><br><span data-lang="en">AI-assisted visuals created for paid social campaigns, designed to feel premium, clear and conversion-oriented.</span><span data-lang="es">Visuales asistidos por IA para campañas pagadas, diseñados para sentirse premium, claros y orientados a conversión.</span></div>
                 </div>
-                <div class="asset-list">
-                  <div class="asset-item">3 social media posts</div>
-                  <div class="asset-item">3 mascot creation images</div>
-                  <div class="asset-item">3 Meta ad creatives</div>
-                  <div class="asset-item">2 content calendars</div>
-                  <div class="asset-item">2 AI videos</div>
-                </div>
+
               </div>
 
               <div class="project-gallery">
-                <div class="media-tile big">Replace: Yeti mascot<span class="media-label">Mascot</span></div>
-                <div class="media-tile small">Replace: Meta ad 1<span class="media-label">Meta Ad</span></div>
-                <div class="media-tile small">Replace: Meta ad 2<span class="media-label">Meta Ad</span></div>
-                <div class="media-tile wide">Replace: Content calendar<span class="media-label">Calendar</span></div>
-                <div class="media-tile phone tall">Replace: AI video thumbnail<span class="media-label">AI Video</span></div>
+                <div class="media-tile big"><img src="03_Yetitech/MASCOT/mascota_1.jpeg" alt="Yetitech mascot"><span class="media-label"><span data-lang="en">Mascot</span><span data-lang="es">Mascota</span></span></div>
+                <div class="media-tile small"><img src="03_Yetitech/ADDS/add_1.jpeg" alt="Yetitech Meta ad"><span class="media-label"><span data-lang="en">Meta Ad</span><span data-lang="es">Anuncio Meta</span></span></div>
+                <div class="media-tile small"><img src="03_Yetitech/ADDS/add_2.jpeg" alt="Yetitech Meta ad"><span class="media-label"><span data-lang="en">Meta Ad</span><span data-lang="es">Anuncio Meta</span></span></div>
+                <div class="media-tile wide"><img src="03_Yetitech/CONTENT-CALENDAR/calendar_1.png" alt="Yetitech content calendar"><span class="media-label"><span data-lang="en">Calendar</span><span data-lang="es">Calendario</span></span></div>
+                <div class="media-tile phone tall"><video autoplay muted loop playsinline><source src="03_Yetitech/VIDEOS/video_yetitech.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">AI Video</span><span data-lang="es">Video con IA</span></span></div>
               </div>
             </div>
           </article>
@@ -1194,7 +1266,7 @@
             <div class="project-main">
               <div class="project-copy">
                 <div>
-                  <div class="section-kicker">03 · New Zealand Brand</div>
+                  <div class="section-kicker">03 · <span data-lang="en">New Zealand Brand</span><span data-lang="es">Marca de Nueva Zelanda</span></div>
                   <h3>Nada Bakery — AI Product Transformation for Social Media</h3>
                   <p data-lang="en">For Nada Bakery, I transform real product photos into more polished and appetizing social media visuals while preserving the original product. The challenge is to improve quality, lighting, composition and brand appeal without making the result feel artificial or disconnected from the bakery’s identity.</p>
                   <p data-lang="es">Para Nada Bakery, transformo fotos reales de producto en piezas más estéticas, apetitosas y listas para redes sociales, manteniendo la esencia del producto original. El reto está en mejorar calidad, iluminación, composición y atractivo visual sin que el resultado se vea artificial o alejado de la identidad de la panadería.</p>
@@ -1202,20 +1274,17 @@
                     <span class="tag">Before & After</span><span class="tag">AI Editing</span><span class="tag">Product Content</span>
                   </div>
                 </div>
-                <div class="asset-list">
-                  <div class="asset-item">3 before/after visuals</div>
-                  <div class="asset-item">Original photo → AI visual direction → final asset</div>
-                </div>
+
               </div>
 
               <div class="project-gallery">
                 <div class="before-after">
-                  <div class="media-tile">Replace: Original photo 1<span class="media-label">Before</span></div>
-                  <div class="media-tile">Replace: Final image 1<span class="media-label">After</span></div>
+                  <div class="media-tile"><img src="04_Nada_Bakery/before-after-01.jpg" alt="Nada Bakery before and after visual"><span class="media-label"><span data-lang="en">Before / After</span><span data-lang="es">Antes / Después</span></span></div>
+                  <div class="media-tile"><img src="04_Nada_Bakery/before-after-02.jpg" alt="Nada Bakery before and after visual"><span class="media-label"><span data-lang="en">Before / After</span><span data-lang="es">Antes / Después</span></span></div>
                 </div>
                 <div class="before-after">
-                  <div class="media-tile">Replace: Original photo 2<span class="media-label">Before</span></div>
-                  <div class="media-tile">Replace: Final image 2<span class="media-label">After</span></div>
+                  <div class="media-tile"><img src="04_Nada_Bakery/before-after-03.jpg" alt="Nada Bakery before and after visual"><span class="media-label"><span data-lang="en">Before / After</span><span data-lang="es">Antes / Después</span></span></div>
+                  <div class="media-tile"><img src="04_Nada_Bakery/before-after-01.jpg" alt="Nada Bakery before and after visual"><span class="media-label"><span data-lang="en">Before / After</span><span data-lang="es">Antes / Después</span></span></div>
                 </div>
               </div>
             </div>
@@ -1226,26 +1295,23 @@
             <div class="project-main">
               <div class="project-copy">
                 <div>
-                  <div class="section-kicker">04 · New Zealand Association</div>
+                  <div class="section-kicker">04 · <span data-lang="en">New Zealand Association</span><span data-lang="es">Asociación de Nueva Zelanda</span></div>
                   <h3>Baking New Zealand — Editorial Content & Slice Magazine Collaboration</h3>
                   <p data-lang="en">For Baking New Zealand, I support the creation of visual content designed to increase community interaction and strengthen the association’s digital presence. I also collaborated on the first 2026 edition of Slice Magazine, developed after the Hot Cross Bun competition, helping generate visuals under specific creative and brand requirements within a tight production timeline.</p>
                   <p data-lang="es">Para Baking New Zealand, apoyo en la creación de contenido visual pensado para generar interacción en la comunidad y fortalecer la presencia digital de la asociación. También participé en la primera edición 2026 de Slice Magazine, desarrollada después de la competencia de Hot Cross Buns, ayudando a generar imágenes bajo parámetros creativos y de marca en un plazo ajustado de producción.</p>
                   <div class="tag-list">
                     <span class="tag">Editorial Design</span><span class="tag">Community Content</span><span class="tag">Magazine</span>
                   </div>
-                  <div class="highlight-bar"><strong>Slice Magazine</strong><br>A collaborative editorial project created within one month for the New Zealand baking industry.</div>
+                  <div class="highlight-bar"><strong><span data-lang="en">Slice Magazine</span><span data-lang="es">Revista Slice</span></strong><br><span data-lang="en">A collaborative editorial project created within one month for the New Zealand baking industry.</span><span data-lang="es">Un proyecto editorial colaborativo creado en un mes para la industria panadera de Nueva Zelanda.</span></div>
                 </div>
-                <div class="asset-list">
-                  <div class="asset-item">3 social media posts</div>
-                  <div class="asset-item">1 special block for Slice Magazine</div>
-                </div>
+
               </div>
 
               <div class="project-gallery">
-                <div class="media-tile big">Replace: Slice Magazine visual<span class="media-label">Slice Magazine</span></div>
-                <div class="media-tile small">Replace: Post 1<span class="media-label">Social Post</span></div>
-                <div class="media-tile small">Replace: Post 2<span class="media-label">Social Post</span></div>
-                <div class="media-tile wide">Replace: Post 3<span class="media-label">Community Content</span></div>
+                <div class="media-tile big"><img src="05_Baking_NZ/SLICE-MAGAZINE/portada_slice.png" alt="Slice Magazine cover"><span class="media-label"><span data-lang="en">Slice Magazine</span><span data-lang="es">Revista Slice</span></span></div>
+                <div class="media-tile small"><img src="05_Baking_NZ/POSTS/post_baking_1.png" alt="Baking NZ social post"><span class="media-label"><span data-lang="en">Social Post</span><span data-lang="es">Post para redes</span></span></div>
+                <div class="media-tile small"><img src="05_Baking_NZ/POSTS/post_baking_2.png" alt="Baking NZ social post"><span class="media-label"><span data-lang="en">Social Post</span><span data-lang="es">Post para redes</span></span></div>
+                <div class="media-tile wide"><img src="05_Baking_NZ/POSTS/post_baking_3.png" alt="Baking NZ social post"><span class="media-label"><span data-lang="en">Community Content</span><span data-lang="es">Contenido comunitario</span></span></div>
               </div>
             </div>
           </article>
@@ -1255,7 +1321,7 @@
             <div class="project-main">
               <div class="project-copy">
                 <div>
-                  <div class="section-kicker">05 · Brand Direction</div>
+                  <div class="section-kicker">05 · <span data-lang="en">Brand Direction</span><span data-lang="es">Dirección de marca</span></div>
                   <h3>Ponte Bonita — Brand, Shoots & UGC Content Direction</h3>
                   <p data-lang="en">Before focusing on AI content, I worked closely with Ponte Bonita’s internal brand operations, supporting content ideas, video structures, shooting organization and influencer collaborations. This experience helped me understand how visual content connects with brand perception, customer experience and social media performance.</p>
                   <p data-lang="es">Antes de enfocarme en contenido con IA, trabajé de cerca en la organización interna de Ponte Bonita, aportando ideas de contenido, estructuras para videos, organización de shootings y gestión de colaboraciones con influencers. Esta experiencia me ayudó a entender cómo el contenido visual conecta con la percepción de marca, la experiencia del cliente y el rendimiento en redes.</p>
@@ -1263,19 +1329,14 @@
                     <span class="tag">Shoot Direction</span><span class="tag">UGC</span><span class="tag">Influencer Coordination</span>
                   </div>
                 </div>
-                <div class="asset-list">
-                  <div class="asset-item">2 shooting videos</div>
-                  <div class="asset-item">1 general brand/content video</div>
-                  <div class="asset-item">2 UGC videos</div>
-                  <div class="asset-item">Content ideas or video structures</div>
-                </div>
+
               </div>
 
               <div class="project-gallery">
-                <div class="media-tile wide">Replace: Shooting video 1<span class="media-label">Shooting</span></div>
-                <div class="media-tile wide">Replace: Brand video<span class="media-label">Brand Video</span></div>
-                <div class="media-tile phone tall">Replace: UGC video 1<span class="media-label">UGC</span></div>
-                <div class="media-tile phone tall">Replace: UGC video 2<span class="media-label">UGC</span></div>
+                <div class="media-tile wide"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/SHOOTING/shooting_1.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">Shooting</span><span data-lang="es">Shooting</span></span></div>
+                <div class="media-tile wide"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/VIDEOS/video_pontebonita_1.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">Brand Video</span><span data-lang="es">Video de marca</span></span></div>
+                <div class="media-tile phone tall"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/UGC/ugc_1.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">UGC</span><span data-lang="es">UGC</span></span></div>
+                <div class="media-tile phone tall"><video autoplay muted loop playsinline><source src="06_Ponte_Bonita/UGC/ugc_2.mp4" type="video/mp4"></video><span class="media-label"><span data-lang="en">UGC</span><span data-lang="es">UGC</span></span></div>
               </div>
             </div>
           </article>
@@ -1287,7 +1348,7 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="section-kicker">AI Creative Direction</div>
+            <div class="section-kicker"><span data-lang="en">AI Creative Direction</span><span data-lang="es">Dirección Creativa con IA</span></div>
             <h2 class="section-title">
               <span data-lang="en">A good AI result starts before the image is generated.</span>
               <span data-lang="es">Un buen resultado con IA empieza antes de generar la imagen.</span>
@@ -1301,12 +1362,12 @@
 
         <div class="paper-card yellow">
           <div class="process-grid">
-            <article class="process-step"><div class="process-num">1</div><h3>Idea</h3><p>Define the message, objective and visual intention.</p></article>
-            <article class="process-step"><div class="process-num">2</div><h3>Visual Direction</h3><p>Set the style, mood, composition, lighting and brand personality.</p></article>
-            <article class="process-step"><div class="process-num">3</div><h3>Prompt Structure</h3><p>Build a detailed prompt, often in JSON, to keep the request controlled.</p></article>
-            <article class="process-step"><div class="process-num">4</div><h3>AI Generation</h3><p>Generate options, compare results and select the strongest direction.</p></article>
-            <article class="process-step"><div class="process-num">5</div><h3>Refinement</h3><p>Edit details, correct composition and polish the piece in Canva or Adobe.</p></article>
-            <article class="process-step"><div class="process-num">6</div><h3>Final Asset</h3><p>Deliver a visual ready for social media, EDMs, campaigns or brand content.</p></article>
+            <article class="process-step"><div class="process-num">1</div><h3><span data-lang="en">Idea</span><span data-lang="es">Idea</span></h3><p><span data-lang="en">Define the message, objective and visual intention.</span><span data-lang="es">Definir el mensaje, objetivo e intención visual.</span></p></article>
+            <article class="process-step"><div class="process-num">2</div><h3><span data-lang="en">Visual Direction</span><span data-lang="es">Dirección Visual</span></h3><p><span data-lang="en">Set the style, mood, composition, lighting and brand personality.</span><span data-lang="es">Definir estilo, mood, composición, iluminación y personalidad de marca.</span></p></article>
+            <article class="process-step"><div class="process-num">3</div><h3><span data-lang="en">Prompt Structure</span><span data-lang="es">Estructura del Prompt</span></h3><p><span data-lang="en">Build a detailed prompt, often in JSON, to keep the request controlled.</span><span data-lang="es">Construir un prompt detallado, muchas veces en JSON, para mantener el pedido controlado.</span></p></article>
+            <article class="process-step"><div class="process-num">4</div><h3><span data-lang="en">AI Generation</span><span data-lang="es">Generación con IA</span></h3><p><span data-lang="en">Generate options, compare results and select the strongest direction.</span><span data-lang="es">Generar opciones, comparar resultados y seleccionar la dirección más fuerte.</span></p></article>
+            <article class="process-step"><div class="process-num">5</div><h3><span data-lang="en">Refinement</span><span data-lang="es">Refinamiento</span></h3><p><span data-lang="en">Edit details, correct composition and polish the piece in Canva or Adobe.</span><span data-lang="es">Editar detalles, corregir composición y pulir la pieza en Canva o Adobe.</span></p></article>
+            <article class="process-step"><div class="process-num">6</div><h3><span data-lang="en">Final Asset</span><span data-lang="es">Pieza Final</span></h3><p><span data-lang="en">Deliver a visual ready for social media, EDMs, campaigns or brand content.</span><span data-lang="es">Entregar un visual listo para redes, EDMs, campañas o contenido de marca.</span></p></article>
           </div>
         </div>
       </div>
@@ -1347,13 +1408,13 @@
 
           <div class="paper-card pink">
             <div class="callout-list">
-              <div class="callout"><strong>Objective</strong><span>Defines what the image needs to achieve.</span></div>
-              <div class="callout"><strong>Visual Style</strong><span>Controls the aesthetic direction and mood.</span></div>
-              <div class="callout"><strong>Composition</strong><span>Guides layout, hierarchy and product placement.</span></div>
-              <div class="callout"><strong>Brand Rules</strong><span>Protects identity, colors and visual consistency.</span></div>
-              <div class="callout"><strong>Restrictions</strong><span>Prevents unwanted results and off-brand elements.</span></div>
-              <div class="callout"><strong>Format</strong><span>Adapts the result to the final platform.</span></div>
-              <div class="callout"><strong>CTA / Text Area</strong><span>Plans readable areas for campaign messages.</span></div>
+              <div class="callout"><strong><span data-lang="en">Objective</span><span data-lang="es">Objetivo</span></strong><span><span data-lang="en">Defines what the image needs to achieve.</span><span data-lang="es">Define qué debe lograr la imagen.</span></span></div>
+              <div class="callout"><strong><span data-lang="en">Visual Style</span><span data-lang="es">Estilo Visual</span></strong><span><span data-lang="en">Controls the aesthetic direction and mood.</span><span data-lang="es">Controla la dirección estética y el mood.</span></span></div>
+              <div class="callout"><strong><span data-lang="en">Composition</span><span data-lang="es">Composición</span></strong><span><span data-lang="en">Guides layout, hierarchy and product placement.</span><span data-lang="es">Guía el layout, la jerarquía y la ubicación del producto.</span></span></div>
+              <div class="callout"><strong><span data-lang="en">Brand Rules</span><span data-lang="es">Reglas de Marca</span></strong><span><span data-lang="en">Protects identity, colors and visual consistency.</span><span data-lang="es">Protege identidad, colores y consistencia visual.</span></span></div>
+              <div class="callout"><strong><span data-lang="en">Restrictions</span><span data-lang="es">Restricciones</span></strong><span><span data-lang="en">Prevents unwanted results and off-brand elements.</span><span data-lang="es">Evita resultados no deseados y elementos fuera de marca.</span></span></div>
+              <div class="callout"><strong><span data-lang="en">Format</span><span data-lang="es">Formato</span></strong><span><span data-lang="en">Adapts the result to the final platform.</span><span data-lang="es">Adapta el resultado a la plataforma final.</span></span></div>
+              <div class="callout"><strong><span data-lang="en">CTA / Text Area</span><span data-lang="es">CTA / Área de Texto</span></strong><span><span data-lang="en">Plans readable areas for campaign messages.</span><span data-lang="es">Planifica áreas legibles para mensajes de campaña.</span></span></div>
             </div>
           </div>
         </div>
@@ -1361,10 +1422,13 @@
     </section>
 
     <section id="tools">
+      <video class="tools-bg-video" autoplay muted loop playsinline>
+        <source src="Herramientas/Herramientas_que_uso.mp4" type="video/mp4">
+      </video>
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="section-kicker">Tools</div>
+            <div class="section-kicker"><span data-lang="en">Tools</span><span data-lang="es">Herramientas</span></div>
             <h2 class="section-title">
               <span data-lang="en">Creative tools I use to build, polish and publish.</span>
               <span data-lang="es">Herramientas que uso para crear, pulir y publicar.</span>
@@ -1373,10 +1437,10 @@
         </div>
 
         <div class="tools-grid">
-          <div class="tool-card"><h3>Design & Editing</h3><div class="tool-tags"><span class="tool-chip">Canva</span><span class="tool-chip">Photoshop</span><span class="tool-chip">Illustrator</span><span class="tool-chip">InDesign</span><span class="tool-chip">CapCut</span></div></div>
-          <div class="tool-card"><h3>AI & Creative Production</h3><div class="tool-tags"><span class="tool-chip">OpenAI</span><span class="tool-chip">Flow</span><span class="tool-chip">Artlist</span></div></div>
-          <div class="tool-card"><h3>Marketing & Platforms</h3><div class="tool-tags"><span class="tool-chip">Klaviyo</span><span class="tool-chip">Mailchimp</span><span class="tool-chip">Meta Business Suite</span></div></div>
-          <div class="tool-card"><h3>Organization & Workflow</h3><div class="tool-tags"><span class="tool-chip">Excel</span><span class="tool-chip">Google Workspace</span></div></div>
+          <div class="tool-card"><h3><span data-lang="en">Design & Editing</span><span data-lang="es">Diseño y Edición</span></h3><div class="tool-tags"><span class="tool-chip">Canva</span><span class="tool-chip">Photoshop</span><span class="tool-chip">Illustrator</span><span class="tool-chip">InDesign</span><span class="tool-chip">CapCut</span></div></div>
+          <div class="tool-card"><h3><span data-lang="en">AI & Creative Production</span><span data-lang="es">IA y Producción Creativa</span></h3><div class="tool-tags"><span class="tool-chip">OpenAI</span><span class="tool-chip">Flow</span><span class="tool-chip">Artlist</span></div></div>
+          <div class="tool-card"><h3><span data-lang="en">Marketing & Platforms</span><span data-lang="es">Marketing y Plataformas</span></h3><div class="tool-tags"><span class="tool-chip">Klaviyo</span><span class="tool-chip">Mailchimp</span><span class="tool-chip">Meta Business Suite</span></div></div>
+          <div class="tool-card"><h3><span data-lang="en">Organization & Workflow</span><span data-lang="es">Organización y Flujo de Trabajo</span></h3><div class="tool-tags"><span class="tool-chip">Excel</span><span class="tool-chip">Google Workspace</span></div></div>
         </div>
       </div>
     </section>
@@ -1385,7 +1449,7 @@
       <div class="container">
         <div class="contact-card">
           <div>
-            <h2>Let’s Create Something Great</h2>
+            <h2><span data-lang="en">Let’s Create Something Great</span><span data-lang="es">Creemos Algo Genial</span></h2>
             <p>
               <span data-lang="en">Technology keeps evolving at an incredible pace. I believe the real value lies in using AI with taste, direction and purpose.</span>
               <span data-lang="es">La tecnología avanza a un ritmo increíble. Creo que el verdadero valor está en usar la IA con criterio, dirección y propósito.</span>
@@ -1396,16 +1460,13 @@
               <a class="btn primary" href="tel:+51902722925">Phone</a>
               <a class="btn primary" href="https://www.linkedin.com/in/maria-fernanda-ordaya-oblitas-b083613b5" target="_blank" rel="noreferrer">LinkedIn</a>
               <a class="btn primary" href="https://www.instagram.com/ferordaya" target="_blank" rel="noreferrer">Instagram</a>
-              <a class="btn dark" href="assets/cv/CV_Fernanda_English.pdf" download>CV English</a>
-              <a class="btn dark" href="assets/cv/CV_Fernanda_Espanol.pdf" download>CV Spanish</a>
+              <a class="btn dark" href="07_CV/Fernanda_Ordaya_CV_English.pdf" download><span data-lang="en">CV English</span><span data-lang="es">CV Inglés</span></a>
+              <a class="btn dark" href="assets/cv/CV_Fernanda_Espanol.pdf" download><span data-lang="en">CV Spanish</span><span data-lang="es">CV Español</span></a>
             </div>
           </div>
 
           <div class="photo-placeholder">
-            <!-- Replace with your photo:
-                 <img src="assets/images/fernanda-photo.jpg" alt="Fernanda Ordaya Oblitas">
-            -->
-            Personal photo placeholder
+            <img class="contact-photo" src="00_personal_photo/good_bye.png" alt="Fernanda Ordaya goodbye avatar">
           </div>
         </div>
       </div>
@@ -1413,7 +1474,7 @@
   </main>
 
   <footer class="footer">
-    © <span id="year"></span> Fernanda Ordaya Oblitas · AI-Powered Graphic Designer & Content Creative
+    © <span id="year"></span> Fernanda Ordaya Oblitas · <span data-lang="en">AI-Powered Graphic Designer & Content Creative</span><span data-lang="es">Diseñadora Gráfica con IA & Creativa de Contenido</span>
   </footer>
 
   <div class="modal" id="resultModal" aria-hidden="true">
@@ -1423,7 +1484,7 @@
         <!-- Replace this area with the real result image:
              <img src="assets/images/json-prompt-result.jpg" alt="Final AI visual result">
         -->
-        Final image result placeholder
+        <span data-lang="en">Final image result placeholder</span><span data-lang="es">Espacio para el resultado final</span>
       </div>
     </div>
   </div>
@@ -1459,5 +1520,7 @@
       }
     });
   </script>
+</body>
+</html>
 </body>
 </html>
